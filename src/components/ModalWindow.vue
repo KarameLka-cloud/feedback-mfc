@@ -1,4 +1,8 @@
 <script setup>
+import {useModalStore} from "../stores/modal.js"
+
+const modalStore = useModalStore()
+
 let props = defineProps({
   externalUrl: String,
   toggleModal: Function
@@ -16,8 +20,11 @@ let props = defineProps({
 
 <template>
   <div class="modal-window">
-    <div @click="toggleModal">Закрыть</div>
+
     <div class="widget-width">
+      <div class="btn-close">
+        <a class="img-close" href="#" @click="modalStore.toggleModal()">Закрыть</a>
+      </div>
       <iframe class="iframe"
               src="https://vashkontrol.ru/widget?mfc=16557"
               frameborder="0"

@@ -1,8 +1,18 @@
 <script setup>
 import DepartmentsBlock from "./components/DepartmentsBlock.vue"
+import ModalWindow from "./components/ModalWindow.vue";
+import {ref} from "vue"
 import {useDepartmentsStore} from "./stores/departments.js"
+import {useModalStore} from "./stores/modal.js"
 
 const departmentsStore = useDepartmentsStore()
+const modalStore = useModalStore()
+
+let isVisible = ref(modalStore.isVisible)
+
+function toggleModal() {
+  modalStore.message()
+}
 
 let departments = [
   {
@@ -582,6 +592,8 @@ let departments = [
 </script>
 
 <template>
+  <div @click="toggleModal">Открыть</div>
+  <ModalWindow v-if="isVisible"/>
   <DepartmentsBlock v-for="departments_list in departments" :departments_list="departments_list"/>
 </template>
 

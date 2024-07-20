@@ -6,10 +6,10 @@ let props = defineProps({
   location: Object
 })
 
-let isVisible = ref(false)
+let listVisible = ref(false)
 
 function toggleList() {
-  isVisible.value = !isVisible.value
+  listVisible.value = !listVisible.value
 }
 </script>
 
@@ -18,7 +18,7 @@ function toggleList() {
     <img class="dotted" src="../assets/dotted.svg" alt="">
     {{ props.location.location_name }}
   </div>
-  <ListLocation :streets="props.location.streets" v-if="isVisible"/>
+  <ListLocation :streets="props.location.streets" v-if="listVisible"/>
 </template>
 
 <style scoped>
