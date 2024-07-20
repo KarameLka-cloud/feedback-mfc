@@ -1,18 +1,5 @@
 <script setup>
 import DepartmentsBlock from "./components/DepartmentsBlock.vue"
-import ModalWindow from "./components/ModalWindow.vue";
-import {ref} from "vue"
-import {useDepartmentsStore} from "./stores/departments.js"
-import {useModalStore} from "./stores/modal.js"
-
-const departmentsStore = useDepartmentsStore()
-const modalStore = useModalStore()
-
-let isVisible = ref(modalStore.isVisible)
-
-function toggleModal() {
-  modalStore.message()
-}
 
 let departments = [
   {
@@ -363,23 +350,23 @@ let departments = [
             streets: [
               {
                 street_name: 'Иркутск, ул. Трактовая, дом 35 (Отдел №1)',
-                id: 123
+                id: 4326
               },
               {
                 street_name: 'Иркутск, ул. Клары Цеткин, дом 12/1 (Отдел №3)',
-                id: 123
+                id: 4328
               },
               {
                 street_name: 'Иркутск, ул. Советская, д.107 Б (Отдел №4)',
-                id: 123
+                id: 4327
               },
               {
                 street_name: 'Иркутск, мкрн Юбилейный, дом 19/1 (Отдел №5)',
-                id: 123
+                id: 4331
               },
               {
                 street_name: 'Иркутск, ул. Верхняя Набережная, д. 10 (Отдел №6)',
-                id: 123
+                id: 7797
               },
               {
                 street_name: 'Иркутск, б. Рябикова, д. 22А (Отдел №7)',
@@ -387,7 +374,7 @@ let departments = [
               },
               {
                 street_name: 'Иркутск, ул. Советская, дом 58, лит. А (Отдел №8)',
-                id: 123
+                id: 15873
               },
               {
                 street_name: 'Иркутск, ул. Рабочая, д.2А (Отдел №9)',
@@ -592,8 +579,6 @@ let departments = [
 </script>
 
 <template>
-  <div @click="toggleModal">Открыть</div>
-  <ModalWindow v-if="isVisible"/>
   <DepartmentsBlock v-for="departments_list in departments" :departments_list="departments_list"/>
 </template>
 

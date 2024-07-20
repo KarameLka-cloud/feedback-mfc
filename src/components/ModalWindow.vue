@@ -1,21 +1,10 @@
 <script setup>
-import {useModalStore} from "../stores/modal.js"
-
-const modalStore = useModalStore()
+import {ref} from "vue";
 
 let props = defineProps({
-  externalUrl: String,
+  id: Number,
   toggleModal: Function
 })
-// export default {
-//   name: 'ExternalPage',
-//   props: {
-//     externalUrl: {
-//       type: String,
-//       // required: true
-//     }
-//   }
-// }
 </script>
 
 <template>
@@ -23,10 +12,10 @@ let props = defineProps({
 
     <div class="widget-width">
       <div class="btn-close">
-        <a class="img-close" href="#" @click="modalStore.toggleModal()">Закрыть</a>
+        <img class="img-close" @click="toggleModal" src="../assets/close.svg" alt="Закрыть">
       </div>
       <iframe class="iframe"
-              src="https://vashkontrol.ru/widget?mfc=16557"
+              :src="`https://vashkontrol.ru/widget?mfc=${props.id}`"
               frameborder="0"
               allowfullscreen
       ></iframe>
@@ -42,7 +31,7 @@ let props = defineProps({
   bottom: 0;
   left: 0;
   background-color: rgba(95, 102, 103, 0.7);
-  z-index: 20;
+  z-index: 2;
 }
 
 .widget-width {
@@ -55,5 +44,20 @@ let props = defineProps({
 .iframe {
   width: 100%;
   height: 100%;
+}
+
+.btn-close {
+  position: relative;
+}
+
+.img-close {
+  position: absolute;
+  top: 160px;
+  right: 20px;
+  display: block;
+  z-index: 3;
+  color: #FFF;
+  height: 40px;
+  cursor: pointer;
 }
 </style>
