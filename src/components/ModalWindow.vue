@@ -25,13 +25,14 @@ let props = defineProps({
 
 <style>
 .modal-window {
+  width: inherit !important;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(95, 102, 103, 0.7);
-  z-index: 2;
+  background-color: rgba(125, 125, 125, 0.8) !important;
+  z-index: 99999 !important;
 }
 
 .widget-width {

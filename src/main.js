@@ -8,4 +8,8 @@ const app = createApp(App)
 
 app.use(pinia)
 
+// const rootElement = document.createElement('div');
+// rootElement.id = 'feedback';
+// document.body.appendChild(rootElement);
+
 app.mount('#feedback')

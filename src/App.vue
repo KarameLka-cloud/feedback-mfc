@@ -1211,9 +1211,14 @@ let departments = [
 </script>
 
 <template>
-  <DepartmentsBlock v-for="departments_list in departments" :departments_list="departments_list"/>
+  <div class="app-style">
+    <DepartmentsBlock v-for="departments_list in departments" :departments_list="departments_list"/>
+  </div>
 </template>
 
 <style scoped>
-
+.app-style {
+  color: #623B2A;
+  padding: 20px;
+}
 </style>

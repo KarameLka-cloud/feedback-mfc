@@ -4,9 +4,9 @@ export default defineConfig({
     plugins: [vue()],
     build: {
         lib: {
-            entry: 'src/main.js', // The entry point of your app
-            name: 'feedback', // The name of the global variable to use in the UMD build
-            fileName: (format) => `feedback.${format}.js`, // The name of the output file
+            entry: 'src/main.ts', // The entry point of your app
+            name: 'AskForm', // The name of the global variable to use in the UMD build
+            fileName: (format) => `ask-form.${format}.js`, // The name of the output file
             formats: ['umd'], // Specify the format as UMD
         },
         rollupOptions: {
