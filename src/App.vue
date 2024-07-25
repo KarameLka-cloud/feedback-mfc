@@ -317,7 +317,7 @@ let departments = [
             streets: [
               {
                 street_name: 'Зима, ул. Клименко, д. 37',
-                id: 3937
+                id: 7801
               }
             ]
           },
@@ -326,15 +326,15 @@ let departments = [
             streets: [
               {
                 street_name: 'Батама, ул. Ленина, д. 40',
-                id: 3937
+                id: 7801
               },
               {
                 street_name: 'Кимильтей, ул. Чкалова, д. 70А',
-                id: 3937
+                id: 7801
               },
               {
                 street_name: 'Центральный Хазан, ул. Мира, д. 57',
-                id: 3937
+                id: 7801
               }
             ]
           }
@@ -1218,7 +1218,6 @@ let departments = [
 
 <style scoped>
 .app-style {
-  color: #623B2A;
-  padding: 20px;
+  padding: 20px 0;
 }
 </style>
