@@ -1,30 +1,18 @@
 <script setup>
-import ModalWindow from "./ModalWindow.vue"
-import {ref} from "vue"
-
 let props = defineProps({
   street: Object
 })
-
-let modalVisible = ref(false)
-
-function toggleModal() {
-  modalVisible.value = !modalVisible.value
-}
 </script>
 
 <template>
-  <ModalWindow v-if="modalVisible" :toggleModal="toggleModal" :id="props.street.id"/>
-  <a class="street" @click="toggleModal">
-    {{ props.street.street_name }}
-  </a>
+  <router-link class="street" :to="{ name: 'mfc', params: { id: props.street.id } }">{{ props.street.street_name }}</router-link>
 </template>
 
 <style scoped>
-.street {
-  display: block;
-  margin: 10px 0;
-  padding-left: 10px;
-  cursor: pointer;
-}
+  .street {
+    display: block;
+    margin: 10px 0;
+    padding-left: 10px;
+    cursor: pointer;
+  }
 </style>

@@ -7,7 +7,6 @@ let props = defineProps({
 </script>
 
 <template>
-
   <div class="first_later">
     {{ props.departments_list.first_later }}
   </div>
