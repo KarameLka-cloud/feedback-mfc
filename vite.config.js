@@ -1,25 +1,25 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 export default defineConfig({
-    plugins: [vue()],
-    build: {
-        lib: {
-            entry: 'src/main.js', // The entry point of your app
-            name: 'feedback', // The name of the global variable to use in the UMD build
-            fileName: (format) => `feedback.${format}.js`, // The name of the output file
-            formats: ['umd'], // Specify the format as UMD
-        },
-        rollupOptions: {
-            external: ['process'],
-            output: {
-                globals: {
-                    process: 'process'
-                },
-            },
-        },
-        cssCodeSplit: true,
+  plugins: [vue()],
+  build: {
+    lib: {
+      entry: "src/main.js", // The entry point of your app
+      name: "feedback", // The name of the global variable to use in the UMD build
+      fileName: (format) => `feedback.${format}.js`, // The name of the output file
+      formats: ["umd"], // Specify the format as UMD
     },
-    define: {
-        'process.env': {}, // This will replace the `process` global with an empty object
+    rollupOptions: {
+      external: ["process"],
+      output: {
+        globals: {
+          process: "process",
+        },
+      },
     },
-})
+    cssCodeSplit: true,
+  },
+  define: {
+    "process.env": {}, // This will replace the `process` global with an empty object
+  },
+});

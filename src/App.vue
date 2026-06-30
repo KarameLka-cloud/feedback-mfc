@@ -1,9 +1,8 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <div class="app-style">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 

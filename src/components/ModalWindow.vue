@@ -1,23 +1,28 @@
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 
 let props = defineProps({
   id: Number,
-  toggleModal: Function
-})
+  toggleModal: Function,
+});
 </script>
 
 <template>
   <div class="modal-window">
-
     <div class="widget-width">
       <div class="btn-close">
-        <img class="img-close" @click="toggleModal" src="../assets/close.svg" alt="Закрыть">
+        <img
+          class="img-close"
+          @click="toggleModal"
+          src="../assets/close.svg"
+          alt="Закрыть"
+        />
       </div>
-      <iframe class="iframe"
-              :src="`https://vashkontrol.ru/widget?mfc=${props.id}`"
-              frameborder="0"
-              allowfullscreen
+      <iframe
+        class="iframe"
+        :src="`https://vashkontrol.ru/widget?mfc=${props.id}`"
+        frameborder="0"
+        allowfullscreen
       ></iframe>
     </div>
   </div>
@@ -57,7 +62,7 @@ let props = defineProps({
   right: 20px;
   display: block;
   z-index: 3;
-  color: #FFF;
+  color: #fff;
   height: 40px;
   cursor: pointer;
 }

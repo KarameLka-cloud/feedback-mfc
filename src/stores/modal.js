@@ -1,17 +1,17 @@
-import {defineStore} from 'pinia'
+import { defineStore } from "pinia";
 
-export const useModalStore = defineStore('modal', {
+export const useModalStore = defineStore("modal", {
   state: () => ({
-    url: 'hello',
+    url: "hello",
     isVisible: false,
   }),
   getters: {},
   actions: {
     toggleModal: () => {
-      console.log('hello')
+      console.log("hello");
     },
     getChangeUrl: (id) => {
-      this.url = `https://vashkontrol.ru/widget?mfc=${id}`
-    }
-  }
-})
+      this.url = `https://vashkontrol.ru/widget?mfc=${id}`;
+    },
+  },
+});
